@@ -1,0 +1,260 @@
+body {  
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+    color: white;
+    overflow: hidden;
+}
+
+a {
+    color: #21ebda;
+}
+a:hover{
+    background-color: #0eccd0;
+}
+
+input {
+    background-color: #078A8C;
+    border-radius: 5px;
+}
+
+#main-title {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    right: 15px;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 100;
+}
+
+#nav-menu{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: 250px;
+    padding: 15px;
+    height: 160px;
+    background: rgba(196, 196, 196, 0.15);
+    border: 2px solid #21EBDA;
+    box-sizing: border-box;
+    border-radius: 16px 0 16px 16px;
+}
+
+#information {
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    text-align: justify;
+    max-width: 350px;
+}
+
+#close-info {
+    position: absolute;
+    right: 15px;
+    top: 270px
+}
+
+#close-nav {
+    position: absolute;
+    bottom: 135px;
+    left: 251px;
+    margin-left: 8px;
+}
+
+#portal {
+    position: absolute;
+    padding: 15px;
+    background: rgba(196, 196, 196, 0.15);
+    border: 2px solid #21EBDA;
+    box-sizing: border-box;
+    border-radius: 0 16px 16px 16px;
+    top: 60%;
+    left: 60%;
+}
+#portal:hover{
+    box-shadow: 0 0 7px #00ffff;
+}
+
+#point_1 {
+    top: 52%;
+    left: 52%;
+}
+
+#point_2 {
+    top: 54%;
+    left: 54%;
+}
+
+#point_3 {
+    top: 56%;
+    left: 56%;
+}
+
+#point_4 {
+    top: 58%;
+    left: 58%;
+}
+
+#point_5 {
+    top: 60%;
+    left: 60%;
+}
+
+#close-portal {
+    position: absolute;
+    top: 60%;
+    right: 40%;
+    margin-right: 2px;
+}
+
+#enter-link {
+    position: absolute;
+    bottom: 2px;
+    left:51%;
+    display: none;
+}
+
+#open-portal {
+    position: absolute;
+    bottom: 2px;
+    right: 51%;
+    text-decoration: underline;
+    color: #21ebda;
+    cursor: pointer;
+    display: none;
+}
+#open-portal:hover{
+    background-color: #0eccd0;
+}
+
+#loading-screen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    color: #00ffff;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#hover-info {
+    position: absolute;
+    display: none;
+    pointer-events: none;
+}
+
+#hover-pointer {
+    height:35px;
+    width:35px;
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    border:2px solid turquoise;
+    pointer-events: none;
+}
+
+#hover-container {
+    padding: 15px;
+    background: rgba(196, 196, 196, 0.15);
+    border: 2px solid #21EBDA;
+    box-sizing: border-box;
+    border-radius: 16px 0 16px 16px;
+    transform:translateX(-100%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #21ebda;
+}
+
+#toggle-options {
+    color: #21EBDA;
+    cursor: pointer;
+}
+#toggle-options:hover {
+    color: #fff;
+}
+
+#options {
+    display: none;
+}
+
+.point {
+    position: absolute;
+    background-color: turquoise;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+
+.nav-btn {
+    background-color: #078A8C;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5%;
+    width: 90%;
+    cursor: pointer; 
+}
+
+.btn:hover {
+    background-color: #0eccd0;
+}
+
+.text-button{
+    color: #21ebda;
+    border: 1px solid #21ebda;
+    width: 20px;
+    height: 20px;
+    padding-bottom: 5px;
+    margin-top: 3px;
+    text-align: center;
+    cursor: pointer;
+}
+.text-button:hover{
+    color: white;
+    box-shadow: 0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #00ffff;
+}
+
+.flex_row {
+    display: flex;
+    flex-direction: row;
+}
+
+.center {
+    text-align: center;
+}
+
+.neon {
+    text-shadow:0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px #00ffff,
+                0 0 82px #00ffff,
+                0 0 92px #00ffff,
+                0 0 102px #00ffff,
+                0 0 151px #00ffff;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #078A8C; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #c4c4c4; 
+}

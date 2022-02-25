@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+    <!-- 
+
+        ███████╗██████╗  █████╗  ██████╗███████╗████████╗██╗███╗   ███╗███████╗    ███╗   ███╗███████╗████████╗ █████╗ 
+        ██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝╚══██╔══╝██║████╗ ████║██╔════╝    ████╗ ████║██╔════╝╚══██╔══╝██╔══██╗
+        ███████╗██████╔╝███████║██║     █████╗     ██║   ██║██╔████╔██║█████╗      ██╔████╔██║█████╗     ██║   ███████║
+        ╚════██║██╔═══╝ ██╔══██║██║     ██╔══╝     ██║   ██║██║╚██╔╝██║██╔══╝      ██║╚██╔╝██║██╔══╝     ██║   ██╔══██║
+        ███████║██║     ██║  ██║╚██████╗███████╗   ██║   ██║██║ ╚═╝ ██║███████╗    ██║ ╚═╝ ██║███████╗   ██║   ██║  ██║
+        ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝╚══════╝   ╚═╝   ╚═╝╚═╝     ╚═╝╚══════╝    ╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝
+        
+        V.0.1.20220108.0001
+    -->
+	<head>
+		<meta charset="utf-8">
+		<title>Spacetime | Map</title>
+        <link rel="shortcut icon" href="https://www.spacetimemeta.io/favicon.ico"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Space+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/map.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+	</head>
+	<body>
+		<script src="js/main.js" type="module"></script>
+
+        <div id="loading-screen">
+            <div id="loading">Loading ...</div>
+        </div>
+        <div id="hover-info">
+            <div id="hover-pointer"></div>
+            <div id="hover-container">
+                <div id="hover-text">test text</div>
+                <img id="hover-img" src="https://ipfs.io/ipfs/QmfD8B3U5pzKDxV5XC2SbmysVWUwDvQ4eVLrZuUfJMBGEt" alt="project logo" width="25" height="25" style="margin-left: 10px;">
+            </div>
+        </div>
+        <div id="main-title" class="neon">SPACETIME META DEMO</div>
+        <div id="nav-menu">
+            <div id="nav-topline" class="center">Find A Location</div>
+            <div class="flex_row" style="justify-content: space-around; margin-top: 5px;">
+                <label>X:</label><input id="cursor-control-x" type="text" name="x" value="0" style="width: 10%;">
+                <label>Y:</label><input id="cursor-control-y" type="text" name="y" value="0" style="width: 10%;">
+                <label>Z:</label><input id="cursor-control-z" type="text" name="z" value="0" style="width: 10%;">
+            </div>
+            <div id="move-cursor" class="nav-btn center btn">Go</div>
+            <div id="toggle-options" class="center">Options +</div>
+            <div id="options">
+                <div id="toggle-cursor" class="nav-btn center btn">Toggle Cursor</div>
+                <div id="toggle-borders" class="nav-btn center btn">Toggle Borders</div>
+                <label>Render Distance:</label><input id="render-distance" type="text" name="render" value="50">
+                <div id="change-render-distance" class="nav-btn center btn">Change Distance</div>
+            </div>
+        </div>
+        <div id="close-nav" class="text-button">X</div>
+        <div id="information">
+            To learn more about the Spacetime Meta Project and join the discussion about decentralized Metaverse, join our <a href="https://discord.gg/MQ5dPHxCJ9" target="_blank">Discord</a> community!<br><br>
+            Add your project to the map! Let the world know you will be Metaverse compatible! Become a Spacetime Meta partner today.
+        </div>
+        <div id="close-info" class="text-button">-</div>
+
+        <div id="point_1" class="point"></div>
+        <div id="point_2" class="point"></div>
+        <div id="point_3" class="point"></div>
+        <div id="point_4" class="point"></div>
+        <div id="point_5" class="point"></div>
+
+        <div id="portal">
+            <img id="prtl-img" src="https://ipfs.io/ipfs/QmNocJ2SpZ1Q7miEY9iEHMopbdhATy9YF5rUGzSLZLsgGS" width="264" height="150" style="border-radius: 15px;">
+            <div id="enter" class="center" style="font-size: x-large;">Enter</div>
+        </div>
+
+        <div id="enter-link">Enter This Place</div>
+        <div id="open-portal">Open Portal</div>
+
+        <div id="close-portal" class="text-button">X</div>
+        
+        <div id="map"></div>
+	</body>
+</html>

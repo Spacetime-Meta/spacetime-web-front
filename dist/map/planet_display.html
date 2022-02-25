@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+    <!-- 
+
+        ███████╗██████╗  █████╗  ██████╗███████╗████████╗██╗███╗   ███╗███████╗    ███╗   ███╗███████╗████████╗ █████╗ 
+        ██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝╚══██╔══╝██║████╗ ████║██╔════╝    ████╗ ████║██╔════╝╚══██╔══╝██╔══██╗
+        ███████╗██████╔╝███████║██║     █████╗     ██║   ██║██╔████╔██║█████╗      ██╔████╔██║█████╗     ██║   ███████║
+        ╚════██║██╔═══╝ ██╔══██║██║     ██╔══╝     ██║   ██║██║╚██╔╝██║██╔══╝      ██║╚██╔╝██║██╔══╝     ██║   ██╔══██║
+        ███████║██║     ██║  ██║╚██████╗███████╗   ██║   ██║██║ ╚═╝ ██║███████╗    ██║ ╚═╝ ██║███████╗   ██║   ██║  ██║
+        ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝╚══════╝   ╚═╝   ╚═╝╚═╝     ╚═╝╚══════╝    ╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝
+        
+        V.0.1.20220108.0001
+    -->
+	<head>
+		<meta charset="utf-8">
+		<title>Spacetime | Map</title>
+        <link rel="shortcut icon" href="https://www.spacetimemeta.io/favicon.ico"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Space+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/map.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+	</head>
+	<body>
+		<script src="js/planetDisplay.js" type="module"></script>
+
+        <div id="loading-screen">
+            <div id="loading">Loading ...</div>
+        </div>
+        <div id="hover-info">
+            <div id="hover-pointer"></div>
+            <div id="hover-container">
+                <div id="hover-text">test text</div>
+                <img id="hover-img" src="https://ipfs.io/ipfs/QmfD8B3U5pzKDxV5XC2SbmysVWUwDvQ4eVLrZuUfJMBGEt" alt="project logo" width="25" height="25" style="margin-left: 10px;">
+            </div>
+        </div>
+        <div id="point_1" class="point"></div>
+        <div id="point_2" class="point"></div>
+        <div id="point_3" class="point"></div>
+        <div id="point_4" class="point"></div>
+        <div id="point_5" class="point"></div>
+        <a id="portal" href="https://spacetime-meta.github.io/spawn-planet2.0/">
+            <img id="prtl-img" src="https://ipfs.io/ipfs/QmNocJ2SpZ1Q7miEY9iEHMopbdhATy9YF5rUGzSLZLsgGS" width="264" height="150" style="border-radius: 15px;">
+            <div id="enter" class="center" style="font-size: x-large;">Enter</div>
+        </a>
+        <div id="close-portal" class="text-button">X</div>
+        <div id="map"></div>
+	</body>
+</html>
