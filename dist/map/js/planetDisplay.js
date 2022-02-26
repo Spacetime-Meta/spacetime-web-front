@@ -266,7 +266,7 @@ window.addEventListener("message", (event) => {
     
     try {
         const data = JSON.parse(event.data)
-        console.log(data.message)
+        // console.log(data.message)
         spaceState[ID('0','0','0')] = {
             "name": data.message.name === "" ? "Cool Planet" : data.message.name ,
             "img": data.message.image === "" ? "QmQ52o7KZJ6kGKt9cjuzJd1KtJ64pYQrUsPKKb52JM17hp" : data.message.image,
