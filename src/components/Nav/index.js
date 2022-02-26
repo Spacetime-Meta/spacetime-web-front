@@ -9,7 +9,7 @@ import { BiMenu } from 'react-icons/bi';
 
 import SocialLinks from './NavComponents/SocialLinks';
 import ServicesMenu from './NavComponents/ServicesMenu';
-import ConnectNami from './NavComponents/ConnectNami';
+import ConnectWallet from './NavComponents/ConnectWallet';
 
 // Always displays on the top left corner
 const SpacetimeLogo = styled.img`
@@ -76,7 +76,7 @@ const MobileNavCenter = styled.div`
     width: ${({ theme }) => theme.dimentions.nav.width};
 `;
 
-function Nav ({ connected, connect }) {
+function Nav ({ connected, connect, connectedWallet }) {
     const below1080 = useMedia("(max-width: 1080px)");
 
     // for the mobile nav
@@ -98,9 +98,10 @@ function Nav ({ connected, connect }) {
                     <ServicesMenu 
                         toggleIsMobileNavActive={toggleIsMobileNavActive}
                     />
-                    <ConnectNami
+                    <ConnectWallet
                         connected={connected}
                         connect={connect}
+                        connectedWallet={connectedWallet}
                     />
                 </SideNavWrapper>
             )}
@@ -111,9 +112,10 @@ function Nav ({ connected, connect }) {
                         <ServicesMenu 
                             toggleIsMobileNavActive={toggleIsMobileNavActive}
                         />
-                        <ConnectNami
+                        <ConnectWallet
                             connected={connected}
                             connect={connect}
+                            connectedWallet={connectedWallet}
                         />
                     </MobileNavCenter>
                 </MobileNavWrapper>

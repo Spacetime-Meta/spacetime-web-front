@@ -101,7 +101,11 @@ const CardDisplay = styled.div`
 function CustomChunkPage ({ getBalance, nfts, handleCustomizeChunks, doAlert }) {
     
     const [isLoaded, setIsLoaded] = useState(false)
-    let selectedNfts = [];
+    useEffect(() => {
+        if(nfts.length > 0){ setIsLoaded(true) }
+    },[nfts])
+
+    const [selectedNfts, setSelectedNfts] = useState([])
     let metadata = {};
 
     const s = window.location.href
@@ -125,23 +129,31 @@ function CustomChunkPage ({ getBalance, nfts, handleCustomizeChunks, doAlert }) 
         );
     }
 
-    function updateSelection (nftName) {
-        if(selectedNfts.indexOf(nftName) !== -1){
-            selectedNfts.splice(selectedNfts.indexOf(nftName),1)
+    function updateSelection (nft) {
+        let isSelected = false;
+        selectedNfts.forEach(selectedNft => {
+            if(selectedNft.unit === nft.unit){
+                isSelected = true
+            }
+        })
+        
+        if(isSelected){
+            setSelectedNfts(selectedNfts.filter(selectedNft => selectedNft.unit !== nft.unit))
         }
         else {
-            selectedNfts.push(nftName)
+            setSelectedNfts(selectedNfts => [...selectedNfts, nft])
         }
     }
     
     function handleGetBalance () {
-        setIsLoaded(true)
         getBalance();
     }
 
     function submitChanges () {
+
+        // check that at least one chunk is selected
         if (selectedNfts.length !== 0) {
-            
+
             metadata = {
                 chunks: selectedNfts.map(nft => { return nft.unit.substring(57) })
             }
@@ -161,7 +173,9 @@ function CustomChunkPage ({ getBalance, nfts, handleCustomizeChunks, doAlert }) 
             if(document.getElementById("portal-link").value !== "") {
                 metadata.planet = document.getElementById("planet-model").value
             }
-            if (Object.keys(metadata).length !== 0) {
+
+            // check that at least one feild is selected
+            if (Object.keys(metadata).length > 1) {
                 handleCustomizeChunks(selectedNfts, metadata)
             }
             else { doAlert(1, "Metadata is empty, customize at least one field", 10) }
