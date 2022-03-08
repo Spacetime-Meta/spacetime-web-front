@@ -236,6 +236,16 @@ const App = () => {
                         />
                     </LayoutWrapper>
                 </Route>
+                <Route path="/supply">
+                    <LayoutWrapper
+                        connected={connected}
+                        connect={connect}
+                        connectedWallet={connectedWallet}
+                    >
+
+                        <div>this is supply info</div>
+                    </LayoutWrapper>
+                </Route>
                 <Route path="/map">
                     <LayoutWrapper
                         connected={connected}
