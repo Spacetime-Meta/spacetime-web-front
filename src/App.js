@@ -7,6 +7,7 @@ import Nav from "./components/Nav"
 
 import Homepage from './pages/Homepage';
 import CustomChunkPage from './pages/CustomChunkPage';
+import SupplyInfoPage from './pages/SupplyInfoPage';
 
 import AlertBar from './components/AlertBar';
 
@@ -243,7 +244,7 @@ const App = () => {
                         connectedWallet={connectedWallet}
                     >
 
-                        <div>this is supply info</div>
+                        <SupplyInfoPage />
                     </LayoutWrapper>
                 </Route>
                 <Route path="/map">
