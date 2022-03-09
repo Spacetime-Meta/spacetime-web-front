@@ -2,24 +2,11 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import ChunkCard from "../../components/ChunkCard"
+import { PageTitle } from "../../components/sharedComponents/TitleComponents"
+import { Panel } from "../../components/sharedComponents/Panels"
 
 const PageWrapper = styled.div`
     padding: 25px;
-`
-
-const CustomPageTitle = styled.h1`
-    padding-bottom: 25px;
-    font-size: 48px;
-    text-align: center;
-    color: white;
-
-    @media screen and (max-width: 768px) {
-        font-size: 40px;
-    }
-
-    @media screen and (max-witdh: 480px) {
-        font-size: 32px
-    }
 `
 
 const GridRow = styled.div`
@@ -49,18 +36,6 @@ const PlanetiFrame = styled.iframe`
     height: 600px;
     border-radius: 50px;
 `
-
-const Panel = styled.div`
-    position: relative;
-    background-color: rgba(0,0,0,0.1);
-    padding: 1.25rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border-radius: 8px;
-    border: 1px solid ${({ theme }) => theme.colors.lightGrayHover};
-`;
 
 const PanelTitle = styled.h3`
     margin-bottom: 10px;
@@ -185,7 +160,7 @@ function CustomChunkPage ({ getBalance, nfts, handleCustomizeChunks, doAlert }) 
 
     return (
         <PageWrapper>
-            <CustomPageTitle>Customize Chunks</CustomPageTitle>
+            <PageTitle>Customize Chunks</PageTitle>
             <PlanetiFrame id={"planetDisplay"} src={windowLocation+"/map/planet_display.html"} frameBorder="0" />
             <GridRow>    
                 <Column1>

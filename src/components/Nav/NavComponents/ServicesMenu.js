@@ -34,6 +34,12 @@ const ServicesMenu = ({ toggleIsMobileNavActive }) => {
             >
                 <BiPlanet /> CUSTOMIZE
             </ServiceRouterLink>
+            <ServiceRouterLink 
+                to={'/supply'}
+                onClick={toggleIsMobileNavActive}
+            >
+                <GiSwapBag /> SUPPLY
+            </ServiceRouterLink>
             <ServiceRouterLink
                 to={'/map'}
                 onClick={toggleIsMobileNavActive}
