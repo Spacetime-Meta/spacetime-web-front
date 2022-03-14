@@ -6,7 +6,8 @@ import { withRouter } from 'react-router-dom';
 import { AiOutlineHome } from 'react-icons/ai';
 import { GiSwapBag } from 'react-icons/gi';
 import { BiPlanet } from 'react-icons/bi';
-import { BsPinMap } from 'react-icons/bs'
+import { BsPinMap } from 'react-icons/bs';
+import { MdOutlineHowToVote } from 'react-icons/md';
 
 // Components
 import { ServiceRouterLink } from '../../Links'
@@ -39,6 +40,12 @@ const ServicesMenu = ({ toggleIsMobileNavActive }) => {
                 onClick={toggleIsMobileNavActive}
             >
                 <GiSwapBag /> SUPPLY
+            </ServiceRouterLink>
+            <ServiceRouterLink 
+                to={'/governance'}
+                onClick={toggleIsMobileNavActive}
+            >
+                <MdOutlineHowToVote /> VOTE
             </ServiceRouterLink>
             <ServiceRouterLink
                 to={'/map'}
