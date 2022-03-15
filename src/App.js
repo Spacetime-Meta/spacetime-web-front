@@ -6,6 +6,7 @@ import './App.css';
 import Nav from "./components/Nav"
 
 import Homepage from './pages/Homepage';
+import MintPage from './pages/MintPage';
 import CustomChunkPage from './pages/CustomChunkPage';
 import SupplyInfoPage from './pages/SupplyInfoPage';
 
@@ -221,6 +222,15 @@ const App = () => {
                         connectedWallet={connectedWallet}
                     >
                         <Homepage />
+                    </LayoutWrapper>
+                </Route>
+                <Route path="/mint">
+                    <LayoutWrapper 
+                        connected={connected}
+                        connect={connect}
+                        connectedWallet={connectedWallet}
+                    >
+                        <MintPage doAlert={doAlert} />
                     </LayoutWrapper>
                 </Route>
                 <Route path="/upload">

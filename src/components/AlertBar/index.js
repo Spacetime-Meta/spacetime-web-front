@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const AlertBarWrapper = styled.div`
     width: 100%;
-    height: 10vh;
+    height: 7vh;
     position: sticky;
     display: flex;
     justify-content: center;

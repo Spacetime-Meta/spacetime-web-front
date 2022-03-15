@@ -4,8 +4,6 @@ import { default as pageTop } from '../../assets/pageTop.svg';
 
 import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md';
 
-
-
 const HeroWrapper = styled.div`
     position: relative;
     display: flex;
@@ -154,11 +152,6 @@ function HeroSection () {
                 <HeroContent>
                     <HeroH1>Spacetime Metaverse</HeroH1>
                     <HeroP>Why limit our metaverse to a single city or planet? Let's take an empty space and create a whole universe!</HeroP>
-                    <HeroAddr onClick={() =>  navigator.clipboard.writeText('addr1q9a4ymzhnwfqarvjaqv6mh63qsw0v7apuy4fylcp5yeg0jmdjsy0uz69l5k9qqmmtanftqkt95qv7ykxusdaak8wqr5sc8p00u')}>
-                        addr1q9a4ymzhnwfqarvjaqv6mh63qsw0v7apuy4fylcp5yeg0jmdjsy0uz69l5k9qqmmtanftqkt95qv7ykxusdaak8wqr5sc8p00u
-                    </HeroAddr>
-                    <HeroSmall style={{color: '#078A8C'}}>Mint is live: 10 Ada (max 300)</HeroSmall>
-                    <HeroSmall>Policy ID: 7652a254a5691f32203c093fcbd74193447c8724cadaf5e7402cf33b</HeroSmall>
                     <HeroBtnWraper>
                         <HeroBtn 
                             href={'https://discord.gg/wtRMBXw2bd'} 
