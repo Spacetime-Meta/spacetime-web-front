@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 // react icons
 import { AiOutlineHome } from 'react-icons/ai';
-import { GiSwapBag } from 'react-icons/gi';
+import { GiSwapBag, GiAnvilImpact } from 'react-icons/gi';
 import { BiPlanet } from 'react-icons/bi';
 import { BsPinMap } from 'react-icons/bs';
 import { MdOutlineHowToVote } from 'react-icons/md';
@@ -28,6 +28,12 @@ const ServicesMenu = ({ toggleIsMobileNavActive }) => {
                 onClick={toggleIsMobileNavActive}
             >
                 <AiOutlineHome /> HOME
+            </ServiceRouterLink>
+            <ServiceRouterLink 
+                to={'/mint'}
+                onClick={toggleIsMobileNavActive}
+            >
+                <GiAnvilImpact /> MINT
             </ServiceRouterLink>
             <ServiceRouterLink 
                 to={'/upload'}
