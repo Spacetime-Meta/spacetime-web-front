@@ -13,8 +13,6 @@ export const Panel = styled.div`
 `;
 
 export const Tabs = styled.div`
-
-
     display: flex;
     flex-direction: row;
     padding-left: 0.75rem;
