@@ -104,6 +104,11 @@ const App = () => {
                                     walletInnerApi,
                                     blockfrostApiKey
                                 )
+
+                                await walletAPI.getBalance().then(result => {
+                                    setNfts(result.assets); 
+                                    setBalance(result.lovelace) 
+                                })
                             }
                             else { 
                                 console.log("No spaming user")
@@ -135,6 +140,12 @@ const App = () => {
                 walletInnerApi,
                 blockfrostApiKey
             )
+
+            await walletAPI.getBalance().then(result => {
+                setNfts(result.assets); 
+                setBalance(result.lovelace) 
+            })
+
             localStorage.setItem('wallet_name', walletName)
         } 
         else {
@@ -264,7 +275,10 @@ const App = () => {
                         connect={connect}
                         connectedWallet={connectedWallet}
                     >
-                        <GovernancePage />
+                        <GovernancePage 
+                            nfts={nfts}
+                            getBalance={getBalance}
+                        />
                     </LayoutWrapper>
                 </Route>
                 <Route path="/map">

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from "styled-components";
 
 import { PageTitle } from "../../components/sharedComponents/TitleComponents"
-import { Panel, Tabs, Tab } from "../../components/sharedComponents/Panels"
+import { Tabs, Tab } from "../../components/sharedComponents/Panels"
 
 import { GovernanceInfoPanel } from "./GovernancePageComponents/GovernanceInfoPanel"
 import { GovernanceProposalsPanel } from "./GovernancePageComponents/GovernanceProposalsPanel"
@@ -12,9 +12,9 @@ const PageWrapper = styled.div`
     padding: 25px;
 `
 
-function GovernancePage () {
+function GovernancePage ({ nfts, getBalance }) {
 
-    const [activeTab, setActiveTab] = useState("info");
+    const [activeTab, setActiveTab] = useState("proposals");
 
     function handleTabClick (tab) {
         if(tab != activeTab){
@@ -25,13 +25,12 @@ function GovernancePage () {
     return (
         <PageWrapper>
             <PageTitle>Governance</PageTitle>
+            <GovernanceInfoPanel 
+                nfts={nfts}
+                getBalance={getBalance}
+            />
+            <div style={{height: "25px"}} />
             <Tabs>
-                <Tab 
-                    active={activeTab === "info"}
-                    onClick={() => {handleTabClick("info")}}
-                >
-                    Info
-                </Tab>
                 <Tab 
                     active={activeTab === "proposals"}
                     onClick={() => {handleTabClick("proposals")}}
@@ -45,17 +44,13 @@ function GovernancePage () {
                     Vote
                 </Tab>
             </Tabs>
-            <Panel>
-                {activeTab === "info" && (
-                    <GovernanceInfoPanel />
-                )}
-                {activeTab === "proposals" && (
-                    <GovernanceProposalsPanel />
-                )}
-                {activeTab === "vote" && (
-                    <GovernanceVotePanel />
-                )}
-            </Panel>
+            {activeTab === "proposals" && (
+                <GovernanceProposalsPanel />
+            )}
+            {activeTab === "vote" && (
+                <GovernanceVotePanel />
+            )}
+            
         </PageWrapper>
     )
 }
