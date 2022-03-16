@@ -1,1 +1,0 @@
-(self.webpackChunknami_wallet_integration=self.webpackChunknami_wallet_integration||[]).push([[806],{7806:e=>{function n(e){var n=new Error("Cannot find module '"+e+"'");throw n.code="MODULE_NOT_FOUND",n}n.keys=()=>[],n.resolve=n,n.id=7806,e.exports=n}}]);
