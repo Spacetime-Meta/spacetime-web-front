@@ -14,3 +14,7 @@ export const PageTitle = styled.h1`
         font-size: 32px
     }
 `
+
+export const PanelTitle = styled.h3`
+    margin-bottom: 10px;
+`

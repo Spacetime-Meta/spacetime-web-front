@@ -8,6 +8,7 @@ import Nav from "./components/Nav"
 import Homepage from './pages/Homepage';
 import MintPage from './pages/MintPage';
 import CustomChunkPage from './pages/CustomChunkPage';
+import GovernancePage from './pages/GovernancePage';
 import SupplyInfoPage from './pages/SupplyInfoPage';
 
 import AlertBar from './components/AlertBar';
@@ -103,6 +104,11 @@ const App = () => {
                                     walletInnerApi,
                                     blockfrostApiKey
                                 )
+
+                                await walletAPI.getBalance().then(result => {
+                                    setNfts(result.assets); 
+                                    setBalance(result.lovelace) 
+                                })
                             }
                             else { 
                                 console.log("No spaming user")
@@ -134,6 +140,12 @@ const App = () => {
                 walletInnerApi,
                 blockfrostApiKey
             )
+
+            await walletAPI.getBalance().then(result => {
+                setNfts(result.assets); 
+                setBalance(result.lovelace) 
+            })
+
             localStorage.setItem('wallet_name', walletName)
         } 
         else {
@@ -255,6 +267,18 @@ const App = () => {
                     >
 
                         <SupplyInfoPage />
+                    </LayoutWrapper>
+                </Route>
+                <Route path="/governance">
+                    <LayoutWrapper
+                        connected={connected}
+                        connect={connect}
+                        connectedWallet={connectedWallet}
+                    >
+                        <GovernancePage 
+                            nfts={nfts}
+                            getBalance={getBalance}
+                        />
                     </LayoutWrapper>
                 </Route>
                 <Route path="/map">

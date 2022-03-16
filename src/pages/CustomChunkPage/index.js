@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import ChunkCard from "../../components/ChunkCard"
-import { PageTitle } from "../../components/sharedComponents/TitleComponents"
+import { PageTitle, PanelTitle } from "../../components/sharedComponents/TitleComponents"
 import { Panel } from "../../components/sharedComponents/Panels"
 
 const PageWrapper = styled.div`
@@ -35,10 +35,6 @@ const PlanetiFrame = styled.iframe`
     width: 100%;
     height: 600px;
     border-radius: 50px;
-`
-
-const PanelTitle = styled.h3`
-    margin-bottom: 10px;
 `
 
 const FormField = styled.input`
