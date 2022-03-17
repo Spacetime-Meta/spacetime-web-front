@@ -7,6 +7,7 @@ import Nav from "./components/Nav"
 
 import Homepage from './pages/Homepage';
 import MintPage from './pages/MintPage';
+import MapPage from './pages/MapPage';
 import CustomChunkPage from './pages/CustomChunkPage';
 import GovernancePage from './pages/GovernancePage';
 import SupplyInfoPage from './pages/SupplyInfoPage';
@@ -46,12 +47,6 @@ const AppDisplay = styled.div`
     @media screen and (max-width: 1080px) {
         min-height: calc(100vh - ${({ theme }) => theme.dimentions.nav.height});
     }
-`
-
-const MapDisplay = styled.iframe`
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
 `
 
 const LayoutWrapper = ({ children, connected, connect, getBalance, connectedWallet }) => {
@@ -199,13 +194,6 @@ const App = () => {
         else { doAlert(1, "An Error occured, try again", 10) }           
     }
 
-    window.addEventListener("message", (event) => {
-        try {
-           const data = JSON.parse(event.data)
-           window.location.href = data.message.link
-        } catch (e) { }
-    })
-
     function doAlert (gravity, message, time) {
         setGravity(gravity)
         setMessage(message)
@@ -214,9 +202,6 @@ const App = () => {
             setIsAlert(false)
         }, time * 1000)
     }
-
-    const s = window.location.href
-    const windowLocation =  s.substring(0, s.indexOf('#'));
 
     return (
         <AppWrapper>
@@ -287,7 +272,7 @@ const App = () => {
                         connect={connect}
                         connectedWallet={connectedWallet}
                     >
-                        <MapDisplay id={"map"} src={windowLocation+"/map/map.html"} frameBorder="0"/>
+                        <MapPage />
                     </LayoutWrapper>
                 </Route>
                 <Redirect to="/home" />
