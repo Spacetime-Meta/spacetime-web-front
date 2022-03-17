@@ -106,6 +106,17 @@ input {
     margin-right: 2px;
 }
 
+#share-button-wrapper { 
+    position: absolute;
+    top: calc(60% + 30px);
+    right: 40%;
+    margin-right: 2px;
+}
+
+#share-icon {
+    width: 10px;
+}
+
 #enter-link {
     position: absolute;
     bottom: 2px;

@@ -28,7 +28,7 @@ function MapPage() {
                 }),
                 '*'
             );
-        }, 1000);
+        }, 2000);
     }, [])
 
     window.addEventListener("message", (event) => {

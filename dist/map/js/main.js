@@ -26,6 +26,7 @@ const close_nav = document.getElementById('close-nav');
 const toggle_options = document.getElementById('toggle-options');
 const toggle_cursor = document.getElementById('toggle-cursor');
 const toggle_borders = document.getElementById('toggle-borders');
+const shareButton = document.getElementById("share-button-wrapper");
 const options = document.getElementById('options');
 
 document.addEventListener('DOMContentLoaded',
@@ -415,6 +416,8 @@ function togglePortal() {
         document.getElementById('close-portal').style.display = "none";
         document.getElementById('open-portal').style.display = "block";
         document.getElementById('enter-link').style.display = "block";
+        
+        shareButton.style.display = "none";
     } else {
         document.getElementById('portal').style.display = "block";
         document.getElementById('point_1').style.display = "block";
@@ -425,6 +428,8 @@ function togglePortal() {
         document.getElementById('close-portal').style.display = "block";
         document.getElementById('open-portal').style.display = "none";
         document.getElementById('enter-link').style.display = "none";
+        
+        shareButton.style.display = "block";
     }
     isPortal = !isPortal;
 }
@@ -476,7 +481,15 @@ function changeRenderDistance() {
 
 
 
-
+shareButton.addEventListener("click", copyPlanetURL)
+function copyPlanetURL () {
+    const loc = getSavedLocation()
+    navigator.clipboard.writeText("https://www.spacetimemeta.io/#/map?x="+loc[0]+"&y="+loc[1]+"&z="+loc[2]);
+    document.getElementById("share-icon").src = "../images/check.png"
+    setTimeout(() => {
+        document.getElementById("share-icon").src = "../images/share.png"
+    }, 2000);
+}
 
 document.getElementById("portal").addEventListener("click", followLink)
 function followLink () {
