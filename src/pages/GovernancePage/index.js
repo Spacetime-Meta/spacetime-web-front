@@ -28,8 +28,10 @@ function GovernancePage ({ nfts, getBalance }) {
                         .then(response => { return response.json() })
                         .then(proposaldata => { tempProposals.push(proposaldata) })
                 }
-
-                setProposals(tempProposals)
+                setInterval(() => {
+                    setProposals(tempProposals)
+                }, 1000);
+                
             })
     }, [])
     
