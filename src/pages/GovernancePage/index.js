@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from "styled-components";
 
 import { PageTitle } from "../../components/sharedComponents/TitleComponents"
@@ -15,6 +15,24 @@ const PageWrapper = styled.div`
 function GovernancePage ({ nfts, getBalance }) {
 
     const [activeTab, setActiveTab] = useState("proposals");
+    const [proposals, setProposals] = useState([])
+
+    useEffect(() => {
+        var tempProposals = []
+        fetch("https://raw.githubusercontent.com/Spacetime-Meta/spacetime-proposals/main/proposalsData.json")
+            .then(response => { return response.json() })
+            .then(jsondata => { 
+                
+                for(var i=0; i<jsondata.amount; i++){
+                    fetch("https://raw.githubusercontent.com/Spacetime-Meta/spacetime-proposals/main/P"+(i+1)+".json")
+                        .then(response => { return response.json() })
+                        .then(proposaldata => { tempProposals.push(proposaldata) })
+                }
+
+                setProposals(tempProposals)
+            })
+    }, [])
+    
 
     function handleTabClick (tab) {
         if(tab != activeTab){
@@ -45,7 +63,7 @@ function GovernancePage ({ nfts, getBalance }) {
                 </Tab>
             </Tabs>
             {activeTab === "proposals" && (
-                <GovernanceProposalsPanel />
+                <GovernanceProposalsPanel proposals={proposals}/>
             )}
             {activeTab === "vote" && (
                 <GovernanceVotePanel />

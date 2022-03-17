@@ -53,8 +53,8 @@ export const GovernanceInfoPanel = ({ nfts, getBalance }) => {
                 <div>
                     <PanelTitle style={{marginLeft: "25px"}}>Info</PanelTitle>
                     <InfoList>
-                        <ListItem>Each chunk can vote once. If you submit  chunk more than once, only the last vote will count</ListItem>
-                        <ListItem>Sending a chunk does not reset its vote. When buying a chunk, you should update its vote</ListItem>
+                        <ListItem>Each chunk can vote once. If you submit  chunk more than once, only the last vote will count.</ListItem>
+                        <ListItem>Sending a chunk does not reset its vote. When buying a chunk, you should update its vote.</ListItem>
                         <ListItem>One address can vote with multiple chunks. One chunk equals one voting power.</ListItem>
                     </InfoList>
                 </div>
