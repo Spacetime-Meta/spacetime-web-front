@@ -494,7 +494,15 @@ function followLink () {
 
 
 
-
+window.addEventListener("message", (event) => {
+    if(typeof event.data === "string"){
+        const data = JSON.parse(event.data)
+        const loc = data.message.split(",")
+        if(loc[0] !== 'null' && loc[2] !== 'null' && loc[2] !== 'null'){
+            safeMove(parseInt(loc[0]),parseInt(loc[1]),parseInt(loc[2]))
+        }
+    }
+})
 
 
 

@@ -28,7 +28,7 @@ function GovernancePage ({ nfts, getBalance }) {
                         .then(response => { return response.json() })
                         .then(proposaldata => { tempProposals.push(proposaldata) })
                 }
-                setInterval(() => {
+                setTimeout(() => {
                     setProposals(tempProposals)
                 }, 1000);
                 
