@@ -5,11 +5,16 @@ import { PanelTitle } from "../../../components/sharedComponents/TitleComponents
 import { Panel } from "../../../components/sharedComponents/Panels"
 import ProposalContainer from "./ProposalContainer.js"
 
-export const GovernanceProposalsPanel = () => {
+export const GovernanceProposalsPanel = ({ proposals }) => {
+
     return (
         <Panel>
             <PanelTitle>Proposals</PanelTitle>
-            <ProposalContainer />
+            {proposals.map((proposal) => {
+                return (
+                    <ProposalContainer proposal={proposal} key={Math.random()}/>
+                )
+            })}
         </Panel>
     )
 }
