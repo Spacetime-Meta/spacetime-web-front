@@ -10,7 +10,7 @@ const PageWrapper = styled.div`
     padding: 25px;
 `
 
-function GovernancePage ({ nfts, getBalance }) {
+function GovernancePage ({ nfts, getBalance, writeToBlockchain, doAlert }) {
 
     const [proposals, setProposals] = useState([])
 
@@ -42,6 +42,8 @@ function GovernancePage ({ nfts, getBalance }) {
             <GovernanceProposalsPanel 
                 proposals={proposals} 
                 nfts={nfts}
+                writeToBlockchain={writeToBlockchain}
+                doAlert={doAlert}
             />
             
         </PageWrapper>

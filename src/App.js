@@ -160,7 +160,7 @@ const App = () => {
         })
     }
 
-    const handleCustomizeChunks = async (selectedChunks, metadata) => {
+    const writeToBlockchain = async (selectedChunks, metadata) => {
 
         let utxos = await walletAPI.getUtxosHex();
         const myAddress = await walletAPI.getAddress();
@@ -174,7 +174,7 @@ const App = () => {
         const t = await walletAPI.transaction({
             PaymentAddress: myAddress,
             recipients: recipients,
-            metadata: {"77223001": metadata},
+            metadata: metadata,
             utxosRaw: utxos,
             networkId: netId.id,
             ttl: 3600,
@@ -236,7 +236,7 @@ const App = () => {
                         <CustomChunkPage 
                             nfts={nfts}
                             getBalance={getBalance}
-                            handleCustomizeChunks={handleCustomizeChunks}
+                            writeToBlockchain={writeToBlockchain}
                             doAlert={doAlert}
                         />
                     </LayoutWrapper>
@@ -260,6 +260,8 @@ const App = () => {
                         <GovernancePage 
                             nfts={nfts}
                             getBalance={getBalance}
+                            writeToBlockchain={writeToBlockchain}
+                            doAlert={doAlert}
                         />
                     </LayoutWrapper>
                 </Route>

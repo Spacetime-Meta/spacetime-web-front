@@ -147,7 +147,7 @@ function CustomChunkPage ({ getBalance, nfts, handleCustomizeChunks, doAlert }) 
 
             // check that at least one feild is selected
             if (Object.keys(metadata).length > 1) {
-                handleCustomizeChunks(selectedNfts, metadata)
+                handleCustomizeChunks(selectedNfts, {"77223001": metadata})
             }
             else { doAlert(1, "Metadata is empty, customize at least one field", 10) }
         } 
