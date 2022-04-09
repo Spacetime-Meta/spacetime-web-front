@@ -81,37 +81,34 @@ const App = () => {
             const walletName = localStorage.getItem('wallet_name')
             if(walletName){
 
-                // timout required because ccvault takes a few seconds to inject api
-                setTimeout(async () => {
-                    if(typeof window.cardano[walletName] !== undefined){
-                        console.log("Found predefined wallet: "+walletName)
-                        wallet = new Wallet(window.cardano[walletName])
-                        await wallet.isEnabled().then(async result => {
-                            setConnected(result)
-                            setConnecedWallet(walletName)
+                if(typeof window.cardano[walletName] !== undefined){
+                    console.log("Found predefined wallet: "+walletName)
+                    wallet = new Wallet(window.cardano[walletName])
+                    await wallet.isEnabled().then(async result => {
+                        setConnected(await result)
+                        setConnecedWallet(walletName)
 
-                            if(result) {
-                                let walletInnerApi = await wallet.enable()
+                        if(result) {
+                            let walletInnerApi = await wallet.enable()
 
-                                walletAPI = new WalletApi(
-                                    cardano_serialization_lib,
-                                    wallet,
-                                    walletInnerApi,
-                                    blockfrostApiKey
-                                )
+                            walletAPI = new WalletApi(
+                                cardano_serialization_lib,
+                                wallet,
+                                walletInnerApi,
+                                blockfrostApiKey
+                            )
 
-                                await walletAPI.getBalance().then(result => {
-                                    setNfts(result.assets); 
-                                    setBalance(result.lovelace) 
-                                })
-                            }
-                            else { 
-                                console.log("No spaming user")
-                                localStorage.removeItem('wallet_name')
-                            }
-                        })
-                    }
-                }, 3000)
+                            await walletAPI.getBalance().then(result => {
+                                setNfts(result.assets);
+                                setBalance(result.lovelace)
+                            })
+                        }
+                        else { 
+                            console.log("No spaming user")
+                            localStorage.removeItem('wallet_name')
+                        }
+                    })
+                }
             }
             else { console.log("No preselected wallet") }
         }
@@ -163,7 +160,7 @@ const App = () => {
         })
     }
 
-    const handleCustomizeChunks = async (selectedChunks, metadata) => {
+    const writeToBlockchain = async (selectedChunks, metadata) => {
 
         let utxos = await walletAPI.getUtxosHex();
         const myAddress = await walletAPI.getAddress();
@@ -177,7 +174,7 @@ const App = () => {
         const t = await walletAPI.transaction({
             PaymentAddress: myAddress,
             recipients: recipients,
-            metadata: {"77223001": metadata},
+            metadata: metadata,
             utxosRaw: utxos,
             networkId: netId.id,
             ttl: 3600,
@@ -239,7 +236,7 @@ const App = () => {
                         <CustomChunkPage 
                             nfts={nfts}
                             getBalance={getBalance}
-                            handleCustomizeChunks={handleCustomizeChunks}
+                            writeToBlockchain={writeToBlockchain}
                             doAlert={doAlert}
                         />
                     </LayoutWrapper>
@@ -263,6 +260,8 @@ const App = () => {
                         <GovernancePage 
                             nfts={nfts}
                             getBalance={getBalance}
+                            writeToBlockchain={writeToBlockchain}
+                            doAlert={doAlert}
                         />
                     </LayoutWrapper>
                 </Route>

@@ -93,7 +93,7 @@ function SupplyInfoPage () {
                 // do something great with this precious data
                 console.log(data);
                 setTiers(data.tierCount)
-                setPercentage((data.tierCount[0].amount - 400) / 400 * 100)
+                setPercentage((data.tierCount[0].amount - 400) / 100 * 100)
             }
             startFetchMyQuery();
         }

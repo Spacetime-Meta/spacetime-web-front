@@ -5,14 +5,20 @@ import { PanelTitle } from "../../../components/sharedComponents/TitleComponents
 import { Panel } from "../../../components/sharedComponents/Panels"
 import ProposalContainer from "./ProposalContainer.js"
 
-export const GovernanceProposalsPanel = ({ proposals }) => {
+export const GovernanceProposalsPanel = ({ proposals, nfts, writeToBlockchain, doAlert }) => {
 
     return (
         <Panel>
             <PanelTitle>Proposals</PanelTitle>
             {proposals.map((proposal) => {
                 return (
-                    <ProposalContainer proposal={proposal} key={Math.random()}/>
+                    <ProposalContainer 
+                        proposal={proposal}
+                        nfts={nfts}
+                        writeToBlockchain={writeToBlockchain}
+                        doAlert={doAlert}
+                        key={Math.random()}
+                    />
                 )
             })}
         </Panel>
