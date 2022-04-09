@@ -23,7 +23,7 @@ const VoteForm = styled.div`
 `
 
 const Status = styled.p`
-    color: ${({ status }) => status === "Awaiting vote" ? "#ffd400" : status === "voting" ? "#00ad31" : "white"};
+    color: ${({ status }) => status === "Awaiting vote" ? "#ffd400" : status === "voting" ? "#00ad31" : status === "approved" ? "#00ad31" : "white"};
 `
 
 const Option = styled.div`
@@ -84,7 +84,7 @@ function ProposalContainer({ proposal, nfts, writeToBlockchain, doAlert }) {
     const [isLoaded, setIsLoaded] = useState(false)
     const [selectedNfts, setSelectedNfts] = useState([]) 
     const [selectedOption, setSelectedOption] = useState('none')
-    
+
     function toggleProposal() {
         setIsActive(!isActive)
     }
@@ -171,31 +171,21 @@ function ProposalContainer({ proposal, nfts, writeToBlockchain, doAlert }) {
                         )
                     })}
                     
-                    {(proposal.status === "accepted" || proposal.status === "refused") &&
-                        <VoteForm>
-                            <h4>Result</h4>
-                            <PanelRow style={{justifyContent: "space-between", width: "400px"}}>
-                                <div>
-                                    <TableHeader>Option</TableHeader>
-                                    <p>Approved</p>
-                                    <p>Declined</p>
-                                    <p>Did not vote</p>
-                                </div>
-                                <div>
-                                    <TableHeader>Power</TableHeader>
-                                    <p>0</p>
-                                    <p>0</p>
-                                    <p>0</p>
-                                </div>
-                                <div>
-                                    <TableHeader>Percentage</TableHeader>
-                                    <p>0%</p>
-                                    <p>0%</p>
-                                    <p>0%</p>
-                                </div>
-                            </PanelRow>
-                        </VoteForm>
-                    }
+                    <VoteForm>
+                        <h4>Result</h4>
+                        <PanelRow style={{justifyContent: "space-between", width: "400px"}}>
+                            <div>
+                                <TableHeader>Option</TableHeader>
+                                <p>Approved</p>
+                                <p>Declined</p>
+                            </div>
+                            <div>
+                                <TableHeader>Power</TableHeader>
+                                <p>{proposal.result.approved}</p>
+                                <p>0</p>
+                            </div>
+                        </PanelRow>
+                    </VoteForm>
                     
 
                     {proposal.status === "voting" && 
