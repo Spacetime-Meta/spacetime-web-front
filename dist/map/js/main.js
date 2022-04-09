@@ -144,7 +144,9 @@ function GLBSpawner (path, x, y, z) {
         object.scene.chunk = new THREE.Vector3(x, y, z);
         object.scene.source = 'gltf'
         scene.add(object.scene)
-    })
+    },
+    ()=>{},
+    () => {console.log("Error with Chunk "+x+" "+y+" "+z)})
 }
 
 // Planet generator
