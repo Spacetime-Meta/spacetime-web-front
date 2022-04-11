@@ -69,7 +69,7 @@ const CardDisplay = styled.div`
     }
 `
 
-function CustomChunkPage ({ getBalance, nfts, handleCustomizeChunks, doAlert }) {
+function CustomChunkPage ({ getBalance, nfts, writeToBlockchain, doAlert }) {
     
     const [isLoaded, setIsLoaded] = useState(false)
     useEffect(() => {
@@ -147,7 +147,7 @@ function CustomChunkPage ({ getBalance, nfts, handleCustomizeChunks, doAlert }) 
 
             // check that at least one feild is selected
             if (Object.keys(metadata).length > 1) {
-                handleCustomizeChunks(selectedNfts, {"77223001": metadata})
+                writeToBlockchain(selectedNfts, {"77223001": metadata})
             }
             else { doAlert(1, "Metadata is empty, customize at least one field", 10) }
         } 
