@@ -23,6 +23,7 @@ const hover_img = document.getElementById('hover-img');
 const hover_text = document.getElementById('hover-text');
 const nav_menu = document.getElementById('nav-menu');
 const close_nav = document.getElementById('close-nav');
+const home_button = document.getElementById('home-button-wrapper');
 const toggle_options = document.getElementById('toggle-options');
 const toggle_cursor = document.getElementById('toggle-cursor');
 const toggle_borders = document.getElementById('toggle-borders');
@@ -350,9 +351,14 @@ document.getElementById('close-portal').addEventListener("click", togglePortal);
 document.getElementById('open-portal').addEventListener("click", togglePortal);
 document.getElementById('change-render-distance').addEventListener("click", changeRenderDistance);
 close_nav.addEventListener("click", toggleNav);
+home_button.addEventListener("click", goHome);
 toggle_options.addEventListener("click", toggleOptions);
 toggle_cursor.addEventListener("click", toggleCursor);
 toggle_borders.addEventListener("click", toggleCursorChunk);
+
+function goHome() {
+    safeMove(0,0,0)
+}
 
 function closeInfo() {
     if (isInfo) {
@@ -375,6 +381,7 @@ function toggleNav() {
         close_nav.style.bottom = "2px";
         close_nav.style.width = "75px";
         close_nav.innerHTML = "Menu";
+        home_button.style.display = "none";
     } else {
         if (isOptions) { toggleOptions() }
         nav_menu.style.display = 'block';
@@ -382,7 +389,7 @@ function toggleNav() {
         close_nav.style.bottom = "135px";
         close_nav.style.width = "20px";
         close_nav.innerHTML = "X";
-
+        home_button.style.display="block";
     }
     isNav = !isNav
 }
@@ -393,11 +400,13 @@ function toggleOptions() {
         nav_menu.style.height = '350px';
         close_nav.style.bottom = "325px";
         options.style.display = 'block';
+        home_button.style.bottom = "295px";
     } else {
         nav_menu.style.height = '160px';
         close_nav.style.bottom = "135px";
         toggle_options.innerHTML = 'Options +';
         options.style.display = 'none';
+        home_button.style.bottom = "105px";
     }
     isOptions = !isOptions
 }
