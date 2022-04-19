@@ -113,8 +113,19 @@ input {
     margin-right: 2px;
 }
 
+#home-button-wrapper { 
+    position: absolute;
+    bottom: 105px;
+    left: 251px;
+    margin-left: 8px;
+}
+
 #share-icon {
     width: 10px;
+}
+
+#home-icon {
+    width: 12px;
 }
 
 #enter-link {
