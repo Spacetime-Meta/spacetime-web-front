@@ -116,15 +116,59 @@ function ProfilePage ({ nfts, writeToBlockchain, doAlert }) {
         setSelectedProfile(nft);   
     }
     useEffect(() => {
-        setProfileName("Default Name")
-        setImgSrc("./images/Default_pfp.jpg")
+
+        async function loadProfile () {
+            async function fetchGraphQL(operationsDoc, operationName, variables) {
+                console.log(operationsDoc)
+                const result = await fetch(
+                    "https://balanced-bulldog-49.hasura.app/v1/graphql",
+                    {
+                        method: "POST",
+                        body: JSON.stringify({
+                            query: operationsDoc,
+                            variables: variables,
+                            operationName: operationName
+                        })
+                    }
+                );
+                return await result.json();
+            }
+              
+            function fetchMyQuery() {
+                return fetchGraphQL(`
+                    query MyQuery {
+                        identityState(where: {handle: {_eq: "${'$'+selectedProfile.unit.substring(selectedProfile.unit.indexOf('.')+1)}"}}) {
+                            image
+                            name
+                        }
+                    }`,
+                    "MyQuery",
+                    {}
+                );
+            }
+              
+            async function startFetchMyQuery() {
+                const { errors, data } = await fetchMyQuery();
+              
+                if (errors) {
+                    // handle those errors like a pro
+                }
+              
+                // do something great with this precious data
+                setProfileName(data.identityState[0].name)
+                setImgSrc("https://ipfs.io/ipfs/"+data.identityState[0].image)
+            }
+              
+            startFetchMyQuery();
+        }
         
         if(selectedProfile.unit !== "."){
             setSelectedHandle('$'+selectedProfile.unit.substring(selectedProfile.unit.indexOf('.')+1))
-
-            // load the profile here
-
+            setProfileName("Default Name")
+            setImgSrc("./images/Default_pfp.jpg")
+            loadProfile()
         }
+
     },[selectedProfile])
 
     function preview() {
