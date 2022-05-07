@@ -8,6 +8,7 @@ import { GiSwapBag, GiAnvilImpact } from 'react-icons/gi';
 import { BiPlanet } from 'react-icons/bi';
 import { BsPinMap } from 'react-icons/bs';
 import { MdOutlineHowToVote } from 'react-icons/md';
+import { CgProfile } from 'react-icons/cg';
 
 // Components
 import { ServiceRouterLink } from '../../Links'
@@ -58,6 +59,12 @@ const ServicesMenu = ({ toggleIsMobileNavActive }) => {
                 onClick={toggleIsMobileNavActive}
             >
                 <BsPinMap /> MAP
+            </ServiceRouterLink>
+            <ServiceRouterLink
+                to={'/profile'}
+                onClick={toggleIsMobileNavActive}
+            >
+                <CgProfile /> PROFILE
             </ServiceRouterLink>
         </ServicesMenuWrapper>
     )

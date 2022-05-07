@@ -11,6 +11,7 @@ import MapPage from './pages/MapPage';
 import CustomChunkPage from './pages/CustomChunkPage';
 import GovernancePage from './pages/GovernancePage';
 import SupplyInfoPage from './pages/SupplyInfoPage';
+import ProfilePage from './pages/ProfilePage';
 
 import AlertBar from './components/AlertBar';
 
@@ -272,6 +273,19 @@ const App = () => {
                         connectedWallet={connectedWallet}
                     >
                         <MapPage />
+                    </LayoutWrapper>
+                </Route>
+                <Route path="/profile">
+                <LayoutWrapper
+                        connected={connected}
+                        connect={connect}
+                        connectedWallet={connectedWallet}
+                    >
+                        <ProfilePage
+                             nfts={nfts}
+                             writeToBlockchain={writeToBlockchain}
+                             doAlert={doAlert}
+                        />
                     </LayoutWrapper>
                 </Route>
                 <Redirect to="/home" />
