@@ -22,6 +22,9 @@ const ServicesMenuWrapper = styled.div`
 `;
 
 const ServicesMenu = ({ toggleIsMobileNavActive }) => {
+
+    const url = new URL(window.location.href)
+
     return (
         <ServicesMenuWrapper>
             <ServiceRouterLink 
@@ -60,12 +63,12 @@ const ServicesMenu = ({ toggleIsMobileNavActive }) => {
             >
                 <BsPinMap /> MAP
             </ServiceRouterLink>
-            <ServiceRouterLink
+            {/* <ServiceRouterLink
                 to={'/profile'}
                 onClick={toggleIsMobileNavActive}
             >
                 <CgProfile /> PROFILE
-            </ServiceRouterLink>
+            </ServiceRouterLink> */}
         </ServicesMenuWrapper>
     )
 }
