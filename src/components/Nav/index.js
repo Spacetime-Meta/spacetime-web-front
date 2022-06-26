@@ -117,7 +117,7 @@ function Nav ({ connected, connect, connectedWallet }) {
                 <SideNavWrapper>
                     <SocialLinks />
                     <EnterMetaverseWrapper>
-                        <MetaverseButton href={`${window.location.host}/metaverse/spawn-planet/`} target="_blank">
+                        <MetaverseButton href={`https://www.spacetimemeta.io/metaverse/spawn-planet/`} target="_blank">
                             Enter Metaverse
                         </MetaverseButton>
                     </EnterMetaverseWrapper>
@@ -136,7 +136,7 @@ function Nav ({ connected, connect, connectedWallet }) {
                     <MobileNavCenter>
                         <SocialLinks />
                         <EnterMetaverseWrapper>
-                            <MetaverseButton href="https://www.spacetimemeta.io/metaverse/spawn-planet/">
+                            <MetaverseButton href="https://www.spacetimemeta.io/metaverse/spawn-planet/" target="_blank">
                                 Enter Metaverse
                             </MetaverseButton>
                         </EnterMetaverseWrapper>
