@@ -2,7 +2,6 @@ import * as THREE from 'https://cdn.skypack.dev/pin/three@v0.137.0-X5O2PK3x44y1W
 import { OrbitControls } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/GLTFLoader.js';
 
-import { getSpaceSector } from './graphql.js';
 import PlanetGenerator from './PlanetGenerator.js';
 
 let renderer, scene, camera, controls, raycaster, clientX, clientY, isCursorChunk, cursorChunk, currChunk;

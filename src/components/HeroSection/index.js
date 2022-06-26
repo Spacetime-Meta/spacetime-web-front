@@ -115,16 +115,17 @@ const HeroBtnWraper = styled.div`
 const HeroBtn = styled.a`
     border-radius: 50px;
     background: ${({ theme }) => theme.colors.hover};
-    padding: 10px 32px;
+    padding: 25px 42px;
     font-size: 16px;
     text-decoration: none;
-    color: black;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 
     :hover {
         background: #fff;
+        color: black;
     }
 `;
 
@@ -154,12 +155,12 @@ function HeroSection () {
                     <HeroP>Why limit our metaverse to a single city or planet? Let's take an empty space and create a whole universe!</HeroP>
                     <HeroBtnWraper>
                         <HeroBtn 
-                            href={'https://discord.gg/wtRMBXw2bd'} 
+                            href={'https://spacetimemeta.io/metaverse/spawn-planet/'} 
                             target={'_blank'}
                             onMouseEnter={onHover}
                             onMouseLeave={onHover}
                         >
-                            Join Community {hover ? <ArrowForward /> : <ArrowRight />}
+                            Enter Metaverse {hover ? <ArrowForward /> : <ArrowRight />}
                         </HeroBtn>
                     </HeroBtnWraper>
                 </HeroContent>

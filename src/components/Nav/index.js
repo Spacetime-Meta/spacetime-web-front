@@ -33,7 +33,7 @@ const NavWrapper = styled.div`
 const SideNavWrapper = styled.div`
     padding-top: 60px;
     display: grid;
-    grid-template-rows: 20px calc(100vh - ${({ theme }) => theme.dimentions.nav.height} - 225px) 60px 25px 80px;
+    grid-template-rows: 20px 200px calc(100vh - ${({ theme }) => theme.dimentions.nav.height} - 425px) 60px 25px 80px;
 `;
 
 // to display when the user in on mobile (screen < 1080px)
@@ -52,7 +52,9 @@ const MobileHamburgerMenuWrapper = styled.div`
     right: 0;
     padding: 5px;
     cursor: pointer;
-    :hover { color: ${({ theme }) => theme.colors.hover}; }
+    :hover { 
+        color: ${({ theme }) => theme.colors.hover}; 
+    }
 `;
 
 // display when user on mobile opens the main menu on top right
@@ -72,8 +74,27 @@ const MobileNavWrapper = styled.div`
 const MobileNavCenter = styled.div`
     padding-top: 20px;
     display: grid;
-    grid-template-rows: 20px calc(100vh - 270px) 60px 25px 80px;
+    grid-template-rows: 20px 200px calc(100vh - 370px) 60px 25px 80px;
     width: ${({ theme }) => theme.dimentions.nav.width};
+`;
+
+const EnterMetaverseWrapper = styled.div`
+    margin-top: 100px;
+    height: 100px;
+    text-align: center;
+`;
+
+const MetaverseButton = styled.a`
+    background: #078A8C;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+
+    :hover {
+        background: white;
+        color: black;
+    }
 `;
 
 function Nav ({ connected, connect, connectedWallet }) {
@@ -95,6 +116,11 @@ function Nav ({ connected, connect, connectedWallet }) {
             ):(
                 <SideNavWrapper>
                     <SocialLinks />
+                    <EnterMetaverseWrapper>
+                        <MetaverseButton href={`${window.location.host}/metaverse/spawn-planet/`} target="_blank">
+                            Enter Metaverse
+                        </MetaverseButton>
+                    </EnterMetaverseWrapper>
                     <ServicesMenu 
                         toggleIsMobileNavActive={toggleIsMobileNavActive}
                     />
@@ -109,6 +135,11 @@ function Nav ({ connected, connect, connectedWallet }) {
                 <MobileNavWrapper isActive={isMobileNavActive} >
                     <MobileNavCenter>
                         <SocialLinks />
+                        <EnterMetaverseWrapper>
+                            <MetaverseButton href="https://www.spacetimemeta.io/metaverse/spawn-planet/">
+                                Enter Metaverse
+                            </MetaverseButton>
+                        </EnterMetaverseWrapper>
                         <ServicesMenu 
                             toggleIsMobileNavActive={toggleIsMobileNavActive}
                         />

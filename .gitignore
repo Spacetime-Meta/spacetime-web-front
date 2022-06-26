@@ -8,3 +8,8 @@ config.js
 *bundle.js*
 *.wasm
 .vscode
+
+# remove files from the spacetime-sdk
+dist/js
+dist/metaverse
+dist/resources
