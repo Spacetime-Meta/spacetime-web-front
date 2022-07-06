@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Event Lobby</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Space+Mono&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <script src="../sdk/v1/bundle.min.js"></script>
+        <script type="module">
+
+            // start by initializing a virtual environment
+            const virtualEnvironment = new VirtualEnvironment();
+
+            // build the environment
+            virtualEnvironment.loadTerrain('./assets/terrains/gameLobby.glb', 0, 0, 0, "glb");
+            virtualEnvironment.spawnPlayer({spawn: {x: 0, y: 10, z: 0}});
+
+            virtualEnvironment.portalMap = {
+                0: `${window.location.origin}/metaverse/parkourLv1.html`,
+                1: `${window.location.origin}/metaverse/maze1.html`,
+            }
+
+            // start the animation loop
+            animate();
+            function animate() {
+                virtualEnvironment.update();
+                requestAnimationFrame(animate);
+            }
+        </script>
+    </body>
+    
+</html>

@@ -21,6 +21,10 @@
                 virtualEnvironment.spawnPlayer({spawn: {x: 0, y: 10, z: 0}});
             }
 
+            virtualEnvironment.portalMap = {
+                0: `${window.location.origin}/metaverse/event-planet`,
+            }
+
             // then start the animation
             animate();
             function animate() {
