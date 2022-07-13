@@ -1,0 +1,9 @@
+{
+    "version": 1,
+    "terrain": {
+        "url": "./assets/terrains/parkour1.glb",
+        "portalMap": {
+            "0": "./configs/eventPlanet.json"
+        } 
+    }
+}

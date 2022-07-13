@@ -1,0 +1,10 @@
+{
+    "version": 1,
+    "terrain": {
+        "url": "./assets/terrains/gameLobby.glb",
+        "portalMap": {
+            "0": "./configs/parkour.json",
+            "1": "./configs/maze.json"
+        } 
+    }
+}

@@ -13,16 +13,16 @@
         <script type="module">
 
             // start by initializing a virtual environment
-            const virtualEnvironment = new VirtualEnvironment();
+            const virtualEnvironment = new VirtualEnvironment("./configs/eventPlanet.json");
 
-            // build the environment
-            virtualEnvironment.loadTerrain('./assets/terrains/gameLobby.glb', 0, 0, 0, "glb");
-            virtualEnvironment.spawnPlayer({spawn: {x: 0, y: 10, z: 0}});
+            // // build the environment
+            // virtualEnvironment.loadTerrain('./assets/terrains/gameLobby.glb', 0, 0, 0, "glb");
+            // virtualEnvironment.spawnPlayer({spawn: {x: 0, y: 10, z: 0}});
 
-            virtualEnvironment.portalMap = {
-                0: `${window.location.origin}/metaverse/parkourLv1.html`,
-                1: `${window.location.origin}/metaverse/maze1.html`,
-            }
+            // virtualEnvironment.portalMap = {
+            //     0: `${window.location.origin}/metaverse/parkourLv1.html`,
+            //     1: `${window.location.origin}/metaverse/maze1.html`,
+            // }
 
             // start the animation loop
             animate();

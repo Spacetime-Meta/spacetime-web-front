@@ -13,11 +13,7 @@
         <script type="module">
 
             // start by initializing a virtual environment
-            const virtualEnvironment = new VirtualEnvironment();
-
-            // build the environment
-            virtualEnvironment.loadTerrain('./assets/terrains/spawnPlanet.glb', 0, 0, 0, "glb", 0.08);
-            virtualEnvironment.spawnPlayer({spawn: {x: 0, y: 10, z: 0}});
+            const virtualEnvironment = new VirtualEnvironment("./configs/spawnPlanet.json");
 
             // start the animation loop
             animate();
