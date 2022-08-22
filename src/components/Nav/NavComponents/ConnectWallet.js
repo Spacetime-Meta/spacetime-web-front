@@ -45,7 +45,7 @@ const ConnectWallet = ({ connected, connect, connectedWallet }) => {
                     <ConnectButton onClick={() => handleClick('nami')}>
                         Connect Nami
                     </ConnectButton>
-                    <ConnectButton onClick={() => handleClick('ethernl')}>
+                    <ConnectButton onClick={() => handleClick('eternl')}>
                         Connect Eternl
                     </ConnectButton>
                 </>

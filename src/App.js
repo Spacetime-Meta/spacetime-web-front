@@ -76,6 +76,9 @@ const App = () => {
 
     useEffect( () => { 
         async function detect() {
+
+            console.log(window.cardano);
+
             const cardano_serialization_lib = await Cardano();
 
             // check if the user has a pre selected wallet

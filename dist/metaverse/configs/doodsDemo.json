@@ -1,0 +1,6 @@
+{
+    "version": 1,
+    "terrain": {
+        "url": "./assets/terrains/desert.glb"
+    }
+}

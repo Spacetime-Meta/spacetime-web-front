@@ -23,6 +23,16 @@ const IsOpen = styled.div`
     margin-left: 3px;
 `
 
+const IsClosed = styled.div`
+    color: red;
+    margin-left: 3px;
+`
+
+const IsHalted = styled.div`
+    color: yellow;
+    margin-left: 3px;
+`
+
 const Addr = styled.small`
     margin-top: 10px;
     border: 1px solid ${({ theme }) => theme.colors.hover};
@@ -54,6 +64,45 @@ function MintPage({ doAlert }) {
     return (
         <PageWrapper>
             <PageTitle>Mint</PageTitle>
+
+            <Panel>
+                <PanelRow style={{justifyContent: "space-between"}}>
+                    <div>
+                        <PanelRow>
+                            <PanelTitle>Space Doods</PanelTitle>
+                            <div style={{height:"1em", width: "1em", borderRadius: "50%", background: "red"}} />
+                            <IsClosed>AUGUST 25</IsClosed>
+                        </PanelRow>
+                        <small>Policy ID: TBA</small>
+                    </div>
+                    <div>
+                        <MintPrice>75 ₳</MintPrice>
+                        <small><b>Free</b> mint for Space Cadets</small><br/>
+                        <small><b>60 ₳</b> If you own a Chunk</small><br/>
+                        <small><b>50 ₳</b> If you own a Gold Chunk</small><br/>
+                        <small>Join our <b><a href="https://discord.gg/wtRMBXw2bd">Discord</a></b> to learn more</small>
+                    </div>
+                </PanelRow>
+                <PanelRow>
+                    <Addr onClick={() => handleCopy('$space-doods')}>
+                        $space-doods
+                    </Addr>
+                    <div style={{width:"10px"}} />
+                    <Addr onClick={() => handleCopy('$spacedoods')}>
+                        $spacedoods
+                    </Addr>
+                </PanelRow>
+                <PanelRow>
+                    <Addr onClick={() => handleCopy('TBA')}>
+                        Address to be announced
+                    </Addr>
+                </PanelRow>
+                <div style={{height:"10px"}} />
+                <small>You can mint a maximum of 30 Space Doods in a single mint transaction</small>
+            </Panel>
+
+            <div style={{height:"25px"}}/>
+
             <Panel>
                 <PanelRow style={{justifyContent: "space-between"}}>
                     <div>
@@ -83,6 +132,7 @@ function MintPage({ doAlert }) {
                 <div style={{height:"10px"}} />
                 <small>Each chunk is 10 Ada, you can mint up to 30 chunks per transaction. By minting a chunk you will get a random location in the Spacetime Meta.</small>
             </Panel>
+
         </PageWrapper>
     )
 }
