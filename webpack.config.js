@@ -49,6 +49,5 @@ module.exports = {
     publicPath: '/', 
     host: '0.0.0.0',
       disableHostCheck: true,
-    
   },
 };
