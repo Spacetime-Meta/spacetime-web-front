@@ -120,6 +120,28 @@ function CustomChunkPage ({ getBalance, nfts, writeToBlockchain, doAlert }) {
         getBalance();
     }
 
+    // this will tak a string and break it in a list if the length is longer than 64 chars
+    // this is necessary to submit to the blockchain
+    function listify (string) {
+        if(string.length > 64) {
+
+            const times = parseInt(string.length/64)
+            const result = []
+            
+            for(var i=0; i<times; i++){
+                result.push(string.substring(0,64))
+                string = string.substring(64)
+            }
+            if(string.length > 0) {
+                result.push(string)
+            }
+
+            return result
+        } else {
+            return string
+        }
+    }
+
     function submitChanges () {
 
         // check that at least one chunk is selected
@@ -133,16 +155,16 @@ function CustomChunkPage ({ getBalance, nfts, writeToBlockchain, doAlert }) {
                 metadata.name = document.getElementById("display-name").value;
             }
             if(document.getElementById("display-logo").value !== "") {
-                metadata.logo = document.getElementById("display-logo").value;
+                metadata.logo = listify(document.getElementById("display-logo").value);
             }
             if(document.getElementById("portal-image").value !== "") {
-                metadata.image = document.getElementById("portal-image").value;
+                metadata.image = listify(document.getElementById("portal-image").value);
             }
             if(document.getElementById("portal-link").value !== "") {
-                metadata.portal = document.getElementById("portal-link").value
+                metadata.portal = listify(document.getElementById("portal-link").value);
             }
             if(document.getElementById("portal-link").value !== "") {
-                metadata.planet = document.getElementById("planet-model").value
+                metadata.planet = listify(document.getElementById("planet-model").value);
             }
 
             // check that at least one feild is selected

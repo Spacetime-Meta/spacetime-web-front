@@ -108,29 +108,35 @@ function MintPage({ doAlert }) {
                     <div>
                         <PanelRow>
                             <PanelTitle>Space Chunks</PanelTitle>
-                            <div style={{height:"1em", width: "1em", borderRadius: "50%", background: "lime"}} />
-                            <IsOpen>OPEN</IsOpen>
+                            <div style={{height:"1em", width: "1em", borderRadius: "50%", background: "yellow"}} />
+                            <IsHalted>HALTED</IsHalted>
                         </PanelRow>
                         <small>Policy ID: 7652a254a5691f32203c093fcbd74193447c8724cadaf5e7402cf33b</small>
                     </div>
                     <MintPrice>10 ₳</MintPrice>
                 </PanelRow>
+                <div style={{height:"25px"}}/>
+                {/* <PanelRow> */}
+                    {/* <Addr onClick={() => handleCopy('$stm')}> */}
+                        {/* $stm */}
+                    {/* </Addr> */}
+                    {/* <div style={{width:"10px"}} /> */}
+                    {/* <Addr onClick={() => handleCopy('$spacetimemeta')}> */}
+                        {/* $spacetimemeta */}
+                    {/* </Addr> */}
+                {/* </PanelRow> */}
                 <PanelRow>
-                    <Addr onClick={() => handleCopy('$stm')}>
-                        $stm
-                    </Addr>
-                    <div style={{width:"10px"}} />
-                    <Addr onClick={() => handleCopy('$spacetimemeta')}>
-                        $spacetimemeta
+                    {/* <Addr onClick={() => handleCopy('addr1q9a4ymzhnwfqarvjaqv6mh63qsw0v7apuy4fylcp5yeg0jmdjsy0uz69l5k9qqmmtanftqkt95qv7ykxusdaak8wqr5sc8p00u')}> */}
+                        {/* addr1q9a4ymzhnwfqarvjaqv6mh63qsw0v7apuy4fylcp5yeg0jmdjsy0uz69l5k9qqmmtanftqkt95qv7ykxusdaak8wqr5sc8p00u */}
+                    {/* </Addr> */}
+                    <Addr onClick={() => handleCopy('*******************************************************************************************************')}>
+                        ********************************************************
                     </Addr>
                 </PanelRow>
-                <PanelRow>
-                    <Addr onClick={() => handleCopy('addr1q9a4ymzhnwfqarvjaqv6mh63qsw0v7apuy4fylcp5yeg0jmdjsy0uz69l5k9qqmmtanftqkt95qv7ykxusdaak8wqr5sc8p00u')}>
-                        addr1q9a4ymzhnwfqarvjaqv6mh63qsw0v7apuy4fylcp5yeg0jmdjsy0uz69l5k9qqmmtanftqkt95qv7ykxusdaak8wqr5sc8p00u
-                    </Addr>
-                </PanelRow>
-                <div style={{height:"10px"}} />
-                <small>Each chunk is 10 Ada, you can mint up to 30 chunks per transaction. By minting a chunk you will get a random location in the Spacetime Meta.</small>
+                <div style={{height:"25px"}}/>
+                {/* <div style={{height:"10px"}} /> */}
+                {/* <small>Each chunk is 10 Ada, you can mint up to 30 chunks per transaction. By minting a chunk you will get a random location in the Spacetime Meta.</small> */}
+                <small>Space Chunk mint was halted after the <a href={`${window.location.origin}/#/governance`}>community vote #3</a>.</small>
             </Panel>
 
         </PageWrapper>
