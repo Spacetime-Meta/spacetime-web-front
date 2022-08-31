@@ -16,10 +16,16 @@ import ProfilePage from './pages/ProfilePage';
 import AlertBar from './components/AlertBar';
 
 import WalletApi, { Cardano, Wallet } from './nami-js';
-import blockfrostApiKey from '../config.js'; 
+
 let nami;
 let wallet;
 let walletAPI;
+
+// setup the api keys according to the heroku doc
+const blockfrostApiKey = {
+    0: process.env.BLOCKFROST_MAINNET,
+    0: process.env.BLOCKFROST_TESTNET
+}
 
 const AppWrapper = styled.div`
     background: ${({ theme }) => theme.backgrounds.app };
