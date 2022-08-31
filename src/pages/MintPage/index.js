@@ -71,34 +71,37 @@ function MintPage({ doAlert }) {
                         <PanelRow>
                             <PanelTitle>Space Doods</PanelTitle>
                             <div style={{height:"1em", width: "1em", borderRadius: "50%", background: "red"}} />
-                            <IsClosed>AUGUST 25</IsClosed>
+                            <IsClosed>SOLD OUT</IsClosed>
+                            
                         </PanelRow>
-                        <small>Policy ID: TBA</small>
+                        <div style={{height:"10px"}} />
+                        <small 
+                            style={{cursor: "pointer"}}
+                            onClick={() => handleCopy('97e72e5296224499ca1911e52960a56426b0eebfbc875263547ce240')}>
+                                Policy ID: 97e72e5296224499ca1911e52960a56426b0eebfbc875263547ce240
+                        </small>
+                        <div style={{height:"10px"}} />
+                        <div style={{fontSize: "large"}}><b>Supply: 200</b></div>
                     </div>
                     <div>
                         <MintPrice>75 ₳</MintPrice>
-                        <small><b>Free</b> mint for Space Cadets</small><br/>
-                        <small><b>60 ₳</b> If you own a Chunk</small><br/>
+                        {/* <small><b>60 ₳</b> If you own a Chunk</small><br/>
                         <small><b>50 ₳</b> If you own a Gold Chunk</small><br/>
-                        <small>Join our <b><a href="https://discord.gg/wtRMBXw2bd">Discord</a></b> to learn more</small>
+                        <small>Join our <b><a href="https://discord.gg/wtRMBXw2bd">Discord</a></b> to learn more</small> */}
                     </div>
                 </PanelRow>
-                <PanelRow>
-                    <Addr onClick={() => handleCopy('$space-doods')}>
-                        $space-doods
-                    </Addr>
-                    <div style={{width:"10px"}} />
+                {/* <PanelRow>
                     <Addr onClick={() => handleCopy('$spacedoods')}>
                         $spacedoods
                     </Addr>
-                </PanelRow>
-                <PanelRow>
-                    <Addr onClick={() => handleCopy('TBA')}>
-                        Address to be announced
+                </PanelRow> */}
+                {/* <PanelRow>
+                    <Addr onClick={() => handleCopy('addr1qx2s3cvdn22hf4yg2fse5m60dwfkz2tv3kjprxclc4cp4qcmq459sd0quqk2wvls07cmszwzzw5evsce7knfewx9gkmsuvfwg4')}>
+                        addr1qx2s3cvdn22hf4yg2fse5m60dwfkz2tv3kjprxclc4cp4qcmq459sd0quqk2wvls07cmszwzzw5evsce7knfewx9gkmsuvfwg4
                     </Addr>
-                </PanelRow>
+                </PanelRow> */}
                 <div style={{height:"10px"}} />
-                <small>You can mint a maximum of 30 Space Doods in a single mint transaction</small>
+                <small>Thank you everyone for your participation! Join our <b><a href="https://discord.gg/wtRMBXw2bd">Discord</a></b> For Space Doods updates.</small>
             </Panel>
 
             <div style={{height:"25px"}}/>

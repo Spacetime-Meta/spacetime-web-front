@@ -233,7 +233,6 @@ function CustomChunkPage ({ getBalance, nfts, writeToBlockchain, doAlert }) {
             <Panel>
                 <PanelTitle>Submit Changes</PanelTitle>
                 <button id="submit" onClick={submitChanges}>customize chunks</button>
-                
             </Panel>
         </PageWrapper>
     )

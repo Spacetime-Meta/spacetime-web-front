@@ -163,7 +163,7 @@ function HeroSection () {
                     <HeroP>Why limit our metaverse to a single city or planet? Let's take an empty space and create a whole universe!</HeroP>
                     <HeroBtnWraper>
                         <HeroBtn 
-                            href={'https://spacetimemeta.io/metaverse/spawn-planet/'} 
+                            href={`${window.location.origin}/metaverse/spawn-planet.html`} 
                             target={'_blank'}
                             onMouseEnter={onHover}
                             onMouseLeave={onHover}
@@ -179,6 +179,12 @@ function HeroSection () {
                                 name={"Crytpo Raggies"}
                                 website={"https://cryptoraggies.io/"}
                                 logo={"https://cryptoraggies.io/assets/img/logosicons/CryptoRaggies-LOGOCAT-800.png"}
+                            />
+
+                            <PartnerCard 
+                                name={"[QCPOL] Stake Pool"}
+                                website={"https://qcpol.stakepool.quebec/en"}
+                                logo={"./images/QCPOL.png"}
                             />
 
                             <PartnerCard 
