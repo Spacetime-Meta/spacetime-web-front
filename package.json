@@ -8,7 +8,7 @@
     "node": "14.x"
   },
   "scripts": {
-    "start": "webpack serve --config ./webpack.config.js --mode development",
+    "start": "node server/server.js",
     "test": "echo \"No test specified\" && exit 0",
     "nami": "cd src/nami-js && npm install && cd ../..",
     "build": "npm run nami && webpack --mode production"
