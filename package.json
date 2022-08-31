@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "engines" : { 
-    "npm" : "7.x",
-    "node" : "18.x"
+    "npm" : "6.x",
+    "node" : "14.x"
   },
   "scripts": {
     "start": "webpack serve --config ./webpack.config.js --mode development",
