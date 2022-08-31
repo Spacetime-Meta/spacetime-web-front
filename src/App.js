@@ -15,7 +15,7 @@ import ProfilePage from './pages/ProfilePage';
 
 import AlertBar from './components/AlertBar';
 
-import WalletApi, { Cardano, Wallet } from 'nami-js';
+import WalletApi, { Cardano, Wallet } from './nami-js';
 
 let nami;
 let wallet;
