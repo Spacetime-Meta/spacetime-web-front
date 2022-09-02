@@ -6,5 +6,4 @@ deploy.sh
 **package-lock.json
 config.js
 *bundle.js*
-*.wasm
 .vscode
