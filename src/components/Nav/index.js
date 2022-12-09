@@ -33,7 +33,7 @@ const NavWrapper = styled.div`
 const SideNavWrapper = styled.div`
     padding-top: 60px;
     display: grid;
-    grid-template-rows: 20px 200px calc(100vh - ${({ theme }) => theme.dimentions.nav.height} - 425px) 60px 25px 80px;
+    grid-template-rows: 20px calc(100vh - ${({ theme }) => theme.dimentions.nav.height} - 225px) 60px 25px 80px;
 `;
 
 // to display when the user in on mobile (screen < 1080px)
@@ -79,7 +79,7 @@ const MobileNavCenter = styled.div`
 `;
 
 const EnterMetaverseWrapper = styled.div`
-    margin-top: 100px;
+    margin-top: 25px;
     height: 100px;
     text-align: center;
 `;
@@ -116,11 +116,11 @@ function Nav ({ connected, connect, connectedWallet }) {
             ):(
                 <SideNavWrapper>
                     <SocialLinks />
-                    <EnterMetaverseWrapper>
-                        <MetaverseButton href={`${window.location.origin}/metaverse/spawn-planet.html`} target="_blank">
+                    {/* <EnterMetaverseWrapper>
+                        <MetaverseButton href={`https://spacetime-metaverse.herokuapp.com/`} target="_blank">
                             Enter Metaverse
                         </MetaverseButton>
-                    </EnterMetaverseWrapper>
+                    </EnterMetaverseWrapper> */}
                     <ServicesMenu 
                         toggleIsMobileNavActive={toggleIsMobileNavActive}
                     />
@@ -135,11 +135,11 @@ function Nav ({ connected, connect, connectedWallet }) {
                 <MobileNavWrapper isActive={isMobileNavActive} >
                     <MobileNavCenter>
                         <SocialLinks />
-                        <EnterMetaverseWrapper>
-                            <MetaverseButton href="https://www.spacetimemeta.io/metaverse/spawn-planet/" target="_blank">
+                        {/* <EnterMetaverseWrapper>
+                            <MetaverseButton href={`https://spacetime-metaverse.herokuapp.com/`} target="_blank">
                                 Enter Metaverse
                             </MetaverseButton>
-                        </EnterMetaverseWrapper>
+                        </EnterMetaverseWrapper> */}
                         <ServicesMenu 
                             toggleIsMobileNavActive={toggleIsMobileNavActive}
                         />

@@ -93,7 +93,7 @@ function SupplyInfoPage () {
                 // do something great with this precious data
                 console.log(data);
                 setTiers(data.tierCount)
-                setPercentage((data.tierCount[0].amount - 400) / 100 * 100)
+                setPercentage(100)
             }
             startFetchMyQuery();
         }
@@ -105,6 +105,7 @@ function SupplyInfoPage () {
     return (
         <PageWrapper>
             <PageTitle>Supply Info</PageTitle>
+            <p style={{width: "100%", textAlign: "center", marginBottom: "25px", fontSize: "150%"}}>Total supply is 9000</p>
             <PageLayout>
                 <Panel>
                     <table style={{height: "100%"}}>

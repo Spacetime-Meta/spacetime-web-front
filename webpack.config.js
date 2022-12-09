@@ -44,10 +44,6 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.DefinePlugin({
-            'process.env.BLOCKFROST_MAINNET': JSON.stringify(process.env.BLOCKFROST_MAINNET),
-            'process.env.BLOCKFROST_TESTNET': JSON.stringify(process.env.BLOCKFROST_TESTNET)
-        })
     ],
     devServer: {
         contentBase: path.resolve(__dirname, './dist'),

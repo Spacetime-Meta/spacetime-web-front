@@ -163,7 +163,7 @@ function HeroSection () {
                     <HeroP>Why limit our metaverse to a single city or planet? Let's take an empty space and create a whole universe!</HeroP>
                     <HeroBtnWraper>
                         <HeroBtn 
-                            href={`${window.location.origin}/metaverse/spawn-planet.html`} 
+                            href={`https://www.spacetimemeta.io/metaverse/spawn-planet`} 
                             target={'_blank'}
                             onMouseEnter={onHover}
                             onMouseLeave={onHover}

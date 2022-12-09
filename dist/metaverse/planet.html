@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Terrain Generation</title>
+        <title>Planet</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Space+Mono&display=swap" rel="stylesheet">
@@ -11,22 +11,7 @@
         <script type="module">
 
             // start by creating a basic virtual environment
-            let virtualEnvironment = new VirtualEnvironment();
-
-            // then fill your world with the stuff you want
-            init();
-            function init() {
-                const urlParams = new URLSearchParams(window.location.search);
-                let seed = parseInt(urlParams.get("x")) + parseInt(urlParams.get("y")) + parseInt(urlParams.get("z"))
-                if(isNaN(seed)){ 
-                    seed = 100 
-                }
-                virtualEnvironment.terrainController.generateTerrain(seed);
-                setTimeout(() => {
-                    virtualEnvironment.LOCAL_PLAYER.position.y = 350;
-                    virtualEnvironment.LOCAL_PLAYER.spawnPoint.y = 350;
-                }, 2000);
-            }
+            let virtualEnvironment = new VirtualEnvironment("./configs/planet.json");
 
             // then start the animation
             animate();

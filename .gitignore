@@ -7,3 +7,4 @@ deploy.sh
 config.js
 *bundle.js*
 .vscode
+blockfrost_config.json

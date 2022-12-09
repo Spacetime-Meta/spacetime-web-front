@@ -229,7 +229,7 @@ function CustomChunkPage ({ getBalance, nfts, writeToBlockchain, doAlert }) {
                     </Panel>
                 </Column2>
             </GridRow>
-            <div style={{height: "50px"}}/>
+            <p style={{width: "100%", textAlign: "center", marginTop: "20px", marginBottom: "20px", fontSize: "100%"}}>Due to low traffic, the update system runs only once a day. It might take up to 24h before you see your changes.</p>
             <Panel>
                 <PanelTitle>Submit Changes</PanelTitle>
                 <button id="submit" onClick={submitChanges}>customize chunks</button>
